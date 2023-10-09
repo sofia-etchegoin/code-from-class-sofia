@@ -1,0 +1,12 @@
+{
+  "name": "tue-pm",
+  "version": "1.0.0",
+  "description": "## package.json Is the configuration file which contains data about your node project, such as the packages it needs, project scripts and many other things.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
