@@ -1,6 +1,6 @@
 export default {
   name: 'Luke Skywalker',
-  height: 172,
+  height: 173,
   mass: 77,
   birthYear: '19BBY',
   homeworld: {
