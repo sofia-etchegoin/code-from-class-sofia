@@ -1,8 +1,11 @@
-import logHowAreYou, { logHello, logGoodbye } from './lib.js'
+import defaultViteExport from 'vite'
+defaultViteExport.Connect
 
-logHello()
-logHowAreYou()
-logGoodbye()
+// import logHowAreYou, { logHello, logGoodbye } from './lib.js'
+
+// logHello()
+// logHowAreYou()
+// logGoodbye()
 
 //
 //
@@ -33,8 +36,8 @@ logGoodbye()
 // importedSup()
 // importedBye()
 
-// import * as phrases from './lib.js'
+import * as phrases from './lib.js'
 
-// phrases.logHello()
-// phrases.default()
-// phrases.logGoodbye()
+phrases.logHello()
+phrases.default()
+phrases.logGoodbye()
