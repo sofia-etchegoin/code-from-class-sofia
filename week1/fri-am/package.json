@@ -1,0 +1,12 @@
+{
+  "name": "async-promises-fs",
+  "version": "1.0.0",
+  "description": "## Async - Code which runs in the background while the application keeps going - Often called non-blocking",
+  "main": "0-async.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dev Academy Aotearoa",
+  "license": "ISC"
+}
