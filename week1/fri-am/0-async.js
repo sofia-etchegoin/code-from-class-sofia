@@ -1,5 +1,7 @@
 function sumLogger(a, b) {
-  console.log(a + b)
+  setTimeout(() => {
+    console.log(a + b)
+  }, 2000)
 }
 
 // A
