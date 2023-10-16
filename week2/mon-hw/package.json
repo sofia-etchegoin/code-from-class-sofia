@@ -21,6 +21,7 @@
     "vitest": "^0.33.0"
   },
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "express-handlebars": "^7.1.0"
   }
 }

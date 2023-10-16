@@ -1,0 +1,10 @@
+<div class="album">
+  <h3>{{name}} - {{year}}</h3>
+  {{#if image}}
+    <img class="album-cover"
+      src="{{image}}"
+      alt="Cover of {{name}}" />
+  {{else}}
+    <p>No image available</p>
+  {{/if}}
+</div>
