@@ -1,0 +1,2 @@
+This project takes a full html page, adds express-handlebars, and splits it up into layouts, partials, and views.
+[Figma slides](https://www.figma.com/file/2jvLbwqt2VGqNv76C17f8Q/Express-Handlebars-(Elise)?node-id=0%3A1)

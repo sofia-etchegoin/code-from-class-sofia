@@ -1,0 +1,26 @@
+{
+  "name": "handlebars-intro",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "start": "node server/index",
+    "dev": "nodemon --ignore 'server/data/' server/index"
+  },
+  "eslintConfig": {
+    "extends": "eda"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-eda": "^1.1.0",
+    "nodemon": "^2.0.15",
+    "vitest": "^0.33.0"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
