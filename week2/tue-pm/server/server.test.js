@@ -4,7 +4,7 @@ import server from './server'
 import { render } from './test-utils'
 
 describe('GET /', () => {
-  test('shows some list items', async () => {
+  it('shows some list items', async () => {
     // request(server) - is a fake server
     // request(server).get('/') - makes a fake GET request to our fake server
     // await ... that request, we get the response
@@ -16,9 +16,9 @@ describe('GET /', () => {
     const screen = render(response)
 
     // const links = screen.getAllByRole('link')
-    const links = screen.queryByRole('link')
+    const links = screen.queryAllByRole('link')
 
-    expect(links[0].textContent).toBe('google')
-    expect(links[1].textContent).toBe('x (previously twitter)')
+    expect(links[0]).toHaveTextContent('google')
+    expect(links[1]).toHaveTextContent('x (previously twitter)')
   })
 })
