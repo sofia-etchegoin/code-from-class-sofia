@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Joey",
+    "isSeaOtter": true,
+    "famousFor": "Live-streaming on YouTube"
+  },
+  {
+    "id": 2,
+    "name": "Jin",
+    "isSeaOtter": false,
+    "famousFor": "Escaping from Auckland Zoo and swimming to Rangitoto Island"
+  },
+  {
+    "id": 3,
+    "name": "Daz",
+    "isSeaOtter": false,
+    "famousFor": "Being lifelong best friends with Chip"
+  },
+  {
+    "id": 4,
+    "name": "Chip",
+    "isSeaOtter": false,
+    "famousFor": "Being lifelong best friends with Daz"
+  }
+]

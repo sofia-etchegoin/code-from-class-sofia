@@ -1,0 +1,43 @@
+{
+  "name": "server-side-rendering",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Server-side rendering with Express Handlebars",
+  "author": "Dev Academy Aotearoa",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index",
+    "dev": "nodemon server/index --ignore server/otters.json",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "test": "vitest",
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
+  },
+  "eslintConfig": {
+    "extends": ["@devacademy"]
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2"
+  },
+  "devDependencies": {
+    "@devacademy/eslint-config": "^1.8.0",
+    "@testing-library/dom": "^8.17.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "eslint": "^8.10.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "jsdom": "^22.1.0",
+    "nodemon": "^2.0.15",
+    "prettier": "2.6.1",
+    "supertest": "^6.2.2",
+    "vitest": "^0.33.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}
