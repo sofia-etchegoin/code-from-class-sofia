@@ -4,6 +4,9 @@ import express from 'express'
 
 import * as lib from './lib.js'
 
+const server = express()
+const app = express()
+
 const router = express.Router()
 
 // Earlier in the week we used a js file for data
