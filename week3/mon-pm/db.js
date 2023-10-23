@@ -24,8 +24,13 @@ export function deleteJarById(jarId) {
 }
 
 export function updateJar(jarObjWithId) {
+  const newJar = {
+    id: jarObjWithId.id,
+    contents: jarObjWithId.contents,
+    canned_date: jarObjWithId.cannedDate
+  }
   return connection('preserves')
-    .update(jarObjWithId)
-    .where('id', jarObjWithId.id)
+    .update(newJar)
+    .where('id', newJar.id)
     .returning('*')
 }
