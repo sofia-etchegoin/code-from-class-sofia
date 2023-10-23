@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import * as db from './db.js'
+import connection from './connection.js'
 const argsArr = process.argv.slice(2)
 
 async function main() {
@@ -43,7 +44,7 @@ async function main() {
   } catch(err) {
     console.log(err.message)
   } finally {
-    db.connection.destroy()
+    connection.destroy()
   }
 }
 
