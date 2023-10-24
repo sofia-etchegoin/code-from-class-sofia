@@ -1,0 +1,22 @@
+<main>
+  <h2>Add a new rental</h2>
+  <form method="POST" action="/rentals">
+    <label for="renterId">Renter ID</label>
+    <input type="number" id="renterId" name="renterId"/>
+    <label for="movieId">Movie ID</label>
+    <input type="number" id="movieId" name="movieId"/>
+    <button type="submit">Submit</button>
+  </form>
+  <hr />
+  <h1>{{groupName}}</h1>
+  <table>
+    <tbody>
+      {{#each items}}
+        <tr>
+          <td><a href="/renters/{{renterId}}">{{renterName}}</a></td>
+          <td><a href="/movies/{{movieId}}">{{movieTitle}}</a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</main>

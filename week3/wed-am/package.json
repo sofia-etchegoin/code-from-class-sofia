@@ -1,0 +1,30 @@
+{
+  "name": "mon-am",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/server",
+    "dev": "tsx watch server/index.ts",
+    "build": "esbuild --packages=external --platform=node --format=esm --outfile=dist/server.js --bundle server/index.ts",
+    "knex": "knex --knexfile ./server/db/knexfile.js",
+    "test": "vitest",
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-handlebars": "^7.1.0",
+    "knex": "^2.5.1",
+    "pg": "^8.11.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "tsx": "^3.12.7",
+    "vitest": "^0.34.1"
+  }
+}

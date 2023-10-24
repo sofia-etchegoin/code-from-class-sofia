@@ -1,0 +1,10 @@
+<main>
+  <h1>{{title}}</h1>
+  <p>{{year}}</p>
+  <p>Renters who love this movie:</p>
+  <ul>
+    {{#each movieLovers}}
+      <li><a href="/renters/{{id}}">{{name}}</a></li>
+    {{/each}}
+  </ul>
+</main>
