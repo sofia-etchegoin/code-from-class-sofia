@@ -2,20 +2,22 @@
 
 ## Demo Agenda
 
-* Walkthrough of the existing app
-* Add a new "rentals" table
-* New DB queries and viewing of data
+- Walkthrough of the existing app
+- Add a new "rentals" table
+- New DB queries and viewing of data
 
 ## Walkthrough
+
 - existing tables
 - routes
 - existing join
 - a separate query for movieLovers in the movies routes
 
 ## Add a new "rentals" table
+
 - Start with DB diagram
 - Migration
-- One seed to test (numbered, cause order matters)
+- One seed to test (numbered file name, cause order matters)
   - add to the clean file (bottom first, fail, then top)
 
 ## New DB queries and viewing of data
@@ -49,7 +51,6 @@ Table renters {
 }
 
 Ref: renters.fav_movie_id > movies.id // many-to-one -->
-
 
 <!-- Proposed additional dbdiagram.io markdown
 

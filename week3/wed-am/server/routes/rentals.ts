@@ -1,9 +1,12 @@
 import express from 'express'
+import * as db from '../db/rentals.ts'
 
 const router = express.Router()
 
 router.get('/', async (req, res, next) => {
   try {
+    const allRentals = await db.getAllRentals()
+    console.log(allRentals)
     const viewData = {
       groupName: 'Rentals',
     }
