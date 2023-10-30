@@ -2,6 +2,7 @@ interface Props {
   name: string
   breed: string
   superpower: string
+  text: string
 }
 
 function Dog(props: Props) {
@@ -13,6 +14,7 @@ function Dog(props: Props) {
           <span className="dog-breed">{props.breed}</span>
         </div>
         <span className="dog-superpower">{props.superpower}</span>
+        <h4>{props.text}</h4>
       </div>
     </div>
   )

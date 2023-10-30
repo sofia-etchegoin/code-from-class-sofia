@@ -1,17 +1,20 @@
-import Dog from './Dog'
+import Dog from './Dog.tsx'
 
 function App() {
   const rosesDog = {
     name: 'Alfie',
     breed: 'humane society dog',
-    superpower: 'singing'
+    superpower: 'singing',
+    text: 'hello',
   }
   const mattsDog = {
     name: 'Bean',
     breed: 'whippet huntaway',
-    superpower: 'running away / being nervous'
+    superpower: 'running away / being nervous',
+    text: 'hi',
   }
   const dogArr = [rosesDog, mattsDog]
+
   return (
     <div className="container">
       {/* <img
@@ -22,9 +25,9 @@ function App() {
       /> */}
       <Dog {...mattsDog} />
       <Dog {...rosesDog} />
-      
-      {dogArr.map(dogObj => {
-        return <Dog {...dogObj} />
+
+      {dogArr.map((dogObj) => {
+        return <Dog key={dogObj.name} {...dogObj} />
       })}
     </div>
   )
