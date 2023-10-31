@@ -1,4 +1,4 @@
-// import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 import Nav from './Nav'
 import Home from './Home'
@@ -16,7 +16,8 @@ export default function App() {
 
       <div className='main'>
         <Nav />
-        <Home />
+        {/* <Home /> */}
+        <Outlet />
       </div>
     </>
   )

@@ -1,3 +1,4 @@
+import {Outlet} from 'react-router-dom'
 export default function Info() {
   return (
     <div className='info'>
@@ -11,6 +12,7 @@ export default function Info() {
         src='/images/tieke.jpg'
         alt='tieke bird'
       />
+      <Outlet />
     </div>
   )
 }
