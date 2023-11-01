@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-function MultiInputForms() {
+// 1. add Interface
+function Multi() {
   const [scares, setScares] = useState([
     {
       name: 'spiders',
@@ -12,24 +13,39 @@ function MultiInputForms() {
 
   // 2. create state for newScares
 
-  // const [newScare, setNewScare] = useState({
-  //   name: '',
-  //   rating: '',
-  //   origin: '',
-  //   lastScare: '',
-  // })
+  const [newScare, setNewScare] = useState({
+    name: '',
+    rating: '',
+    origin: '',
+    lastScare: '',
+  })
 
   // 3. handle type function create const for key and new StateObject (copt newScare add key and value pair) and setNewScare to state obj
 
-  // const handleType = (evt) => {
-  //   console.log(evt.target.id, evt.target.value)
-  // }
+  const handleType = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(evt.target.id, evt.target.value)
+
+    const key = evt.target.id
+
+    const stateObject = {
+      ...newScare,
+      [key]: evt.target.value,
+    }
+    setNewScare(stateObject)
+  }
 
   // 4. handle submit should prevent default set scares to copy scares and add newScare and reset newScares
 
-  // const handleSubmit = (evt) => {
-  //   evt.preventDefault()
-  // }
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+    evt.preventDefault()
+    setScares([...scares, newScare])
+    setNewScare({
+      name: '',
+      rating: '',
+      origin: '',
+      lastScare: '',
+    })
+  }
 
   // add onchange and values for each field on form
 
@@ -45,25 +61,45 @@ function MultiInputForms() {
       </ul>
       <div>
         <h2>Multiple Input Form</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-input">
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name" />
+            <input
+              onChange={handleType}
+              value={newScare.name}
+              type="text"
+              id="name"
+            />
           </div>
 
           <div className="form-input">
             <label htmlFor="rating">Rating:</label>
-            <input type="text" id="rating" />
+            <input
+              onChange={handleType}
+              value={newScare.rating}
+              type="text"
+              id="rating"
+            />
           </div>
 
           <div className="form-input">
             <label htmlFor="lastScare">Last Scare</label>
-            <input type="text" id="lastScare" />
+            <input
+              onChange={handleType}
+              value={newScare.lastScare}
+              type="text"
+              id="lastScare"
+            />
           </div>
 
           <div className="form-input">
             <label htmlFor="origin">Country of origin:</label>
-            <input type="text" id="origin" />
+            <input
+              onChange={handleType}
+              value={newScare.origin}
+              type="text"
+              id="origin"
+            />
           </div>
 
           <button>Save</button>
@@ -73,7 +109,7 @@ function MultiInputForms() {
   )
 }
 
-export default MultiInputForms
+export default Multi
 
 // Gaby's Cheat Sheet
 
