@@ -1,10 +1,10 @@
-//props for func
+//1. props for func
 
 function SingleInputForm() {
-  //text state needs to change
-  //function to handle change in form
-  //function to handle submit in form, prevent default and updates the text state, look at conditionals?
-  // set new text
+  //2. text state needs to change
+  //3. function to handle change in form
+  //4. function to handle submit in form, prevent default and updates the text state, look at conditionals?
+  //5. set new text
   return (
     <>
       <form>

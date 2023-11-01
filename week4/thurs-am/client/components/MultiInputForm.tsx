@@ -1,14 +1,34 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 
 function MultiInputForms() {
-  const [scares, setScares] = useState([
+  const scares = [
     {
       name: 'spiders',
       rating: '5',
       origin: 'nightmare',
       lastScare: 'all the time',
     },
-  ])
+    {
+      name: 'aliens',
+      rating: '2.56',
+      origin: 'space ~ proxima cent',
+      lastScare: '1945',
+    },
+  ]
+
+  // const [scares, setScares] = useState([
+  //   {
+  //     name: 'spiders',
+  //     rating: '5',
+  //     origin: 'nightmare',
+  //     lastScare: 'all the time',
+  //   }, {
+  //   name: 'aliens',
+  //   rating: '2.56',
+  //   origin: 'space ~ proxima cent',
+  //   lastScare: '1945',
+  // },
+  // ])
 
   // 2. create state for newScares
 
@@ -39,7 +59,8 @@ function MultiInputForms() {
       <ul>
         {scares.map((s) => (
           <li key={s.name}>
-            {s.name} ({s.rating} on the boo scale)
+            NAME: {s.name}, RATING: {s.rating} on the boo scale, ORIGIN:{' '}
+            {s.origin}, LAST SCARE: {s.origin}
           </li>
         ))}
       </ul>

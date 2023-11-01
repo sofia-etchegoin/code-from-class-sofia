@@ -9,9 +9,9 @@ function Main() {
     'overdue emails',
     'driving behind log trucks like the one in final destination',
   ]
-  // change to changable state variable
-  // a function that handles a new scare and adds a scare to the animal array
-  // pass function down as props to form
+  // 1. change to changable state variable
+  // 2. a function that handles a new scare and adds a scare to the animal array
+  // 3. pass function down as props to form
 
   const [showSingleForm, setShowSingleForm] = useState(false)
 
