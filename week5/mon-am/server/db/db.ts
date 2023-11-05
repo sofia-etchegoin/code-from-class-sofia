@@ -12,3 +12,7 @@ export function getShark(id: number) {
 export function addShark(shark: SharkData): Promise<SharkFull[]> {
   return db('sharks').insert(shark).returning('*')
 }
+
+export function updateShark(shark: SharkFull): Promise<SharkFull> {
+  return db('sharks').update(shark).where('id', shark.id).returning('*')
+}
