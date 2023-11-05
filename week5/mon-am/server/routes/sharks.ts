@@ -13,6 +13,11 @@ router.get('/', async (req, res) => {
   }
 })
 
+// GET /api/v1/sharks/something
+router.get('/something', (req, res) => {
+  res.send('<p>what is even happening?!?!?<p>')
+})
+
 // GET /api/v1/sharks/3 (e.g.)
 router.get('/:id', async (req, res) => {
   const sharkId = Number(req.params.id)
@@ -26,10 +31,5 @@ router.post('/', async (req, res) => {
   const dbResponse = await db.addShark(newShark)
   res.json(dbResponse[0])
 })
-
-// GET /api/v1/sharks/something
-// router.get('/something', (req, res) => {
-//   res.send('<p>what is even happening?!?!?<p>')
-// })
 
 export default router
