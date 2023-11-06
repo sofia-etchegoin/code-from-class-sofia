@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import * as db from '../db/db'
+import * as db from '../db/db.ts'
 
 // GET /api/v1/sharks
 router.get('/', async (req, res) => {
@@ -13,16 +13,20 @@ router.get('/', async (req, res) => {
   }
 })
 
-// GET /api/v1/sharks/something
-router.get('/something', (req, res) => {
-  res.send('<p>what is even happening?!?!?<p>')
-})
-
 // GET /api/v1/sharks/3 (e.g.)
-router.get('/:id', async (req, res) => {
-  const sharkId = Number(req.params.id)
-  const shark = await db.getShark(sharkId)
-  res.json(shark)
+router.get('/:id', async (req, res, next) => {
+  try {
+    const sharkId = Number(req.params.id)
+    const shark = await db.getShark(sharkId)
+    if (shark == undefined) {
+      res.sendStatus(404)
+      return
+    }
+
+    res.json(shark)
+  } catch (err) {
+    next(err)
+  }
 })
 
 // POST /api/v1/sharks

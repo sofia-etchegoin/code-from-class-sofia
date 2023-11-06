@@ -5,7 +5,7 @@ export function getSharks(): Promise<SharkFull[]> {
   return db('sharks').select()
 }
 
-export function getShark(id: number) {
+export function getShark(id: number): Promise<SharkFull | undefined> {
   return db('sharks').select().where('id', id).first()
 }
 
