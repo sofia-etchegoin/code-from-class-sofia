@@ -2,9 +2,10 @@
 import { useEffect, useState } from 'react'
 
 import { getPokemon } from '../apiClient/pokemon.ts'
+import type { Pokemon } from '../../models/Pokemon.ts'
 
 export default function Pokemon() {
-  const [pokemon, setPokemon] = useState(null)
+  const [pokemon, setPokemon] = useState<Pokemon | null>()
 
   useEffect(() => {
     async function fetchPokemon() {
@@ -23,6 +24,7 @@ export default function Pokemon() {
     <>
       <h2>Pokémon </h2>
       {/* <pre>{JSON.stringify(pokemon, null, 2)}</pre> */}
+      <img src={pokemon?.sprites.front_shiny} alt={pokemon?.name} />
     </>
   )
 }
