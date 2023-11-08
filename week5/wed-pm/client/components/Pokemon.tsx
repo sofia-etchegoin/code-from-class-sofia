@@ -7,6 +7,7 @@ import type { Pokemon } from '../../models/Pokemon.ts'
 export default function Pokemon() {
   const [pokemon, setPokemon] = useState<Pokemon | null>()
   const [error, setError] = useState<Error | null>()
+
   useEffect(() => {
     async function fetchPokemon() {
       try {
@@ -32,7 +33,11 @@ export default function Pokemon() {
   return (
     <>
       <h2>Pokémon </h2>
-      <img src={pokemon.sprites.front_shiny} alt={pokemon.name} />
+      <img
+        className="pokemon--display"
+        src={pokemon.sprites.front_shiny}
+        alt={pokemon.name}
+      />
     </>
   )
 }

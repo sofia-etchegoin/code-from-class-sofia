@@ -9,7 +9,8 @@ import {
 
 import '../test/setup.ts'
 import * as Models from '../../models/Pokemon.ts'
-
+// no import of apiClient
+// no `vi.mock('...')`
 import Pokemon from './Pokemon.tsx'
 
 const mockPokemonData = {
@@ -31,6 +32,8 @@ describe('<Pokemon />', () => {
     render(<Pokemon />)
     const message = screen.getByText('Loading...')
     await waitForElementToBeRemoved(message)
+
+    // a request has been made that matched this pattern
     expect(scope.isDone()).toBe(true)
   })
 
