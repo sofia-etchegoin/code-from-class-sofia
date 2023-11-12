@@ -6,7 +6,15 @@ import Sharks from './components/Sharks'
 
 export const routes = createRoutesFromElements(
   <Route path="/" element={<AppLayout />}>
-    <Route path="pokemon" element={<Pokemon />} />
+    <Route path="pokemon" element={
+      <>
+        <Pokemon name="pikachu"/>
+        <Pokemon name="bulbasaur" />
+        <Pokemon name="snorlax" />
+        <Pokemon name="diglett" />
+        <Pokemon name="rayquaza" />
+      </>
+    } />
     <Route path="sharks" element={<Sharks />} />
   </Route>
 )

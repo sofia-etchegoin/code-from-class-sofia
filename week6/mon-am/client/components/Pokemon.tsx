@@ -1,20 +1,35 @@
 import { useEffect, useState } from 'react'
 import { getPokemon } from '../apiClient/pokemon'
+import { useQuery } from '@tanstack/react-query'
 
 import { type Pokemon } from '../../models/pokemon'
 
-export default function Pokemon() {
-  const [pokemon, setPokemon] = useState<Pokemon | null>(null)
+interface Props {
+  name: string
+}
 
-  useEffect(() => {
-    async function fetchPokemon() {
-      const pokemonResponse = await getPokemon()
-      setPokemon(pokemonResponse)
-    }
+export default function Pokemon(props: Props) {
+  // const [pokemon, setPokemon] = useState<Pokemon | null>(null)
 
-    fetchPokemon()
-  }, [])
+  // useEffect(() => {
+  //   async function fetchPokemon() {
+  //     const pokemonResponse = await getPokemon()
+  //     setPokemon(pokemonResponse)
+  //   }
 
+  //   fetchPokemon()
+  // }, [])
+
+  const {data: pokemon, error, isLoading} = useQuery(
+    {queryKey: ['pokemon', props.name], queryFn: () => getPokemon(props.name)}
+  )
+
+  if (error) {
+    return <p>Ack!</p>
+  }
+  if (!pokemon || isLoading) {
+    return <p>Still loading pokemon...</p>
+  }
   return (
     <section>
       <h2>Pokémon </h2>
