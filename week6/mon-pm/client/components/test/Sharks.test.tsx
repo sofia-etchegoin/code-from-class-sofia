@@ -18,6 +18,7 @@ describe('<Sharks>', () => {
         { id: 1, name: 'Cool Shark', colour: 'Gray' },
         { id: 2, name: 'Parent Shark', colour: 'Yellow' },
       ])
+
     renderApp('/sharks')
 
     await waitFor(() => screen.getByText(/loading/i))
@@ -32,20 +33,46 @@ describe('<Sharks>', () => {
         { id: 2, name: 'Parent Shark', colour: 'Yellow' },
       ])
 
-    renderApp('/sharks')
+    const screen = renderApp('/sharks')
 
     await waitForElementToBeRemoved(() => screen.queryByText(/loading/i))
     logRoles(document.body)
-    const section = screen.getByRole('heading', { name: 'Sharks' })
-    expect(section.parentElement).not.toBeNull()
-    const listItems = within(section.parentElement as HTMLElement)
-      .getAllByRole('listitem')
-      .map((li) => li.textContent)
+    const heading = screen.getByRole('heading', { name: 'Sharks' })
+    const list = heading.nextElementSibling
+    // PROVE IT
+    // if (list == undefined || !(list instanceof HTMLElement)) {
+    //   expect.fail('List element was not fail')
+    // }
 
-    expect(listItems).toMatchInlineSnapshot(`
+    // ASSERT IT "trust me bro"
+
+    const sharks = within(list as HTMLElement).getAllByRole('listitem')
+    expect(sharks).toMatchInlineSnapshot(`
       [
-        "Cool Shark is Gray",
-        "Parent Shark is Yellow",
+        <li>
+          <p>
+            Cool Shark
+             is
+             
+            <span
+              style="background-color: Gray; padding-inline: 0.5rem;"
+            >
+              Gray
+            </span>
+          </p>
+        </li>,
+        <li>
+          <p>
+            Parent Shark
+             is
+             
+            <span
+              style="background-color: Yellow; padding-inline: 0.5rem;"
+            >
+              Yellow
+            </span>
+          </p>
+        </li>,
       ]
     `)
     expect(scope.isDone()).toBe(true)

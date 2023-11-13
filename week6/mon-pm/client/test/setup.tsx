@@ -15,6 +15,7 @@ export function renderApp(location: string) {
   const router = createMemoryRouter(routes, {
     initialEntries: [location],
   })
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -28,5 +29,7 @@ export function renderApp(location: string) {
       <RouterProvider router={router} />
     </QueryClientProvider>
   )
+
+  // const container = render(<RouterProvider router={router} />)
   return { user, ...container }
 }
