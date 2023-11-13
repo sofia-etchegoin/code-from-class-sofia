@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
 export default function FruitList() {
-  const { data: fruitList, isError, isLoading } = useQuery(['fruit'], getFruit)
+  const { data: fruitList, isError, isLoading } = useQuery({queryKey: ['fruit'], queryFn: getFruit})
 
   if (isError) {
     return <div>There was an error trying to get your fruit</div>

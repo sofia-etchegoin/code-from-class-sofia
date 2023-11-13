@@ -12,13 +12,14 @@ export default function FruitForm() {
   const [form, setForm] = useState<FruitData>(initialFormData)
   const queryClient = useQueryClient()
 
-  const fruitMutation = useMutation(addFruit, {
+  const fruitMutation = useMutation({
+    mutationFn: addFruit, 
     onSuccess: async (newFruit) => {
       const currentFruits: Fruit[] | undefined = queryClient.getQueryData(['fruit'])
       if(currentFruits) {
         queryClient.setQueryData(['fruit'], [...currentFruits, newFruit])
       } else {
-        queryClient.invalidateQueries(['fruit'])
+        queryClient.invalidateQueries({queryKey: ['fruit']})
       }
     }
   })

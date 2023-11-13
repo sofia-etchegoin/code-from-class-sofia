@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 export default function FruitDetails() {
   const { fruitId } = useParams()
 
-  const {data: fruitDetails, isError, isLoading} = useQuery(['fruits', fruitId], () => getFruitById(fruitId as string))
+  const {data: fruitDetails, isError, isLoading} = useQuery({ queryKey: ['fruits', fruitId], queryFn: () => getFruitById(fruitId as string)})
 
   if (isError) {
     return <div>There was an error trying to get your fruit</div>
